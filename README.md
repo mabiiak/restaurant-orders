@@ -35,8 +35,8 @@ A lanchonete :baguette_bread: :cook: Pão na Chapa :baguette_bread: :cook: possu
   <summary><strong>🗓 Data de Entrega</strong></summary><br />
   
   * Este projeto é `individual`;
-  * São `X` dias de projeto;
-  * Data para entrega final do projeto: `27/09/2022 13:50`.
+  * É `1` dia de projeto;
+  * Data para entrega final do projeto: `27/09/2022 14:00`.
 
 </details>
 
