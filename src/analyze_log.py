@@ -26,6 +26,16 @@ def open_csv(path_to_file):
         return file_infos
 
 
+def filter_person(data, name):
+    data_person = []
+
+    for index in data:
+        if index[0] == name:
+            data_person.append(index)
+
+    print(data_person)
+
+
 def analyze_log(path_to_file):
     '''
         filtrar informaçoes
@@ -34,4 +44,5 @@ def analyze_log(path_to_file):
 
         salvar dados filtrados em csv
     '''
-    open_csv(path_to_file)
+    data = open_csv(path_to_file)
+    filter_person(data, 'maria')
