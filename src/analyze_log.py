@@ -34,23 +34,16 @@ def filter_person(data, name):
     return data_person
 
 
-def filter_larger_order(data_client):
+def count_orders(data_client):
     count_orders = {}
-    tamanho = 0
-    most_requested = ''
 
     for order in data_client:
         if order[1] not in count_orders:
             count_orders[order[1]] = 1
         elif order[1] in count_orders:
             count_orders[order[1]] += 1
-
-    for index in enumerate(count_orders):
-        if count_orders[index[1]] > tamanho:
-            tamanho = count_orders[index[1]]
-            most_requested = index[1]
     
-    return most_requested
+    return count_orders
 
 
 def analyze_log(path_to_file):
@@ -64,4 +57,13 @@ def analyze_log(path_to_file):
     data = open_csv(path_to_file)
 
     data_client = filter_person(data, 'maria')
-    maria_larger_order = filter_larger_order(data_client)
+    maria_orders = count_orders(data_client)
+    maria_larger_order = ''
+
+    for index in enumerate(maria_orders):
+        length = 0
+        if maria_orders[index[1]] > length:
+            length = maria_orders[index[1]]
+            maria_larger_order = index[1]
+
+    # print(maria_larger_order)
