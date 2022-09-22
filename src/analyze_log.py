@@ -4,8 +4,6 @@ import sys
 
 
 '''
-    - Quantas vezes 'arnaldo' pediu 'hamburguer'?
-
     - Quais pratos 'joao' nunca pediu?
 
     - Quais dias 'joao' nunca foi à lanchonete?
@@ -67,3 +65,13 @@ def analyze_log(path_to_file):
             maria_larger_order = index[1]
 
     # print(maria_larger_order)
+
+    data_client = filter_person(data, 'arnaldo')
+    arnaldo_orders = count_orders(data_client)
+    arnaldo_count_orders = 0
+
+    for index in enumerate(arnaldo_orders):
+        if index[1] == 'hamburguer':
+            arnaldo_count_orders = arnaldo_orders[index[1]]
+    
+    # print(arnaldo_count_orders)
