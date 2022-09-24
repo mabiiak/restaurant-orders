@@ -1,17 +1,13 @@
 from os.path import exists
 import csv
-import sys
 
-
-file_path = '/home/mabi/Documentos/Trybe/4-CS/sd-016-a-restaurant-orders/data/orders_1.csv'
 
 def open_csv(path_to_file):
-    if ".csv" not in path_to_file:
-        raise ValueError("Arquivo inválido")
+    if not path_to_file.endswith(".csv"):
+        raise FileNotFoundError(f"Extensão inválida: '{path_to_file}'")
 
     if not exists(path_to_file):
-        print(f"Arquivo {path_to_file} não encontrado", file=sys.stderr)
-        return None
+        raise FileNotFoundError(f"Arquivo inexistente: '{path_to_file}'")
     
     with open(path_to_file, mode="r") as file:
         file_infos = list(csv.reader(file))
@@ -69,13 +65,7 @@ def about_restaurant(data, search):
 
 
 def analyze_log(path_to_file):
-    '''
-        filtrar informaçoes
-
-        criar arquivo > result_file = 'data/mkt_campaign.txt'
-
-        salvar dados filtrados em csv
-    '''
+    result_file = 'data/mkt_campaign.txt'
     data = open_csv(path_to_file)
 
     data_client_maria = filter_person(data, 'maria')
@@ -88,8 +78,6 @@ def analyze_log(path_to_file):
             length = maria_orders[index[1]]
             maria_larger_order = index[1]
 
-    print(maria_larger_order)
-
     # -----------------------------------------------------------
 
     data_client_arnaldo = filter_person(data, 'arnaldo')
@@ -100,8 +88,6 @@ def analyze_log(path_to_file):
         if index[1] == 'hamburguer':
             arnaldo_count_orders = arnaldo_orders[index[1]]
     
-    print(arnaldo_count_orders)
-
     # -----------------------------------------------------------
 
     data_client_joao = filter_person(data, 'joao')
@@ -110,19 +96,24 @@ def analyze_log(path_to_file):
     plates = about_restaurant(data, 'plates')
     days = about_restaurant(data, "days")
 
-    did_not_prove = []
-    did_not_attend = []
+    did_not_prove = set()
+    did_not_attend = set()
 
     for index in enumerate(plates):    
         if index[1] not in joao_orders:
-            did_not_prove.append(index[1])
+            did_not_prove.add(index[1])
 
     for index in enumerate(days):
         if index[1] not in joao_days_orders:
-            did_not_attend.append(index[1])
+            did_not_attend.add(index[1])
 
-    print(set(did_not_prove))
-    print(set(did_not_attend))
+    filtreds = [
+        f"{maria_larger_order}\n",
+        f"{arnaldo_count_orders}\n",
+        f"{did_not_prove}\n",
+        f"{did_not_attend}\n",
+    ]
 
-
-analyze_log(file_path)
+    with open(result_file, "w") as txt_file:
+        for index in filtreds:
+            txt_file.write(index)
