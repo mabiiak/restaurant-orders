@@ -51,7 +51,23 @@ class TrackOrders:
         return result
 
     def get_days_never_visited_per_customer(self, customer):
-        pass
+        data = self.data
+        all_days = []
+        visited = []
+        result = set()
+
+        for index in data:
+            if data[index][2] not in all_days:
+                all_days.append(data[index][2])
+
+            if customer == data[index][0] and data[index][2] not in visited:
+                visited.append(data[index][2])
+
+        for plate in all_days:
+            if plate not in visited:
+                result.add(plate)
+
+        return result
 
     def get_busiest_day(self):
         pass
