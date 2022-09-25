@@ -74,14 +74,3 @@ class TrackOrders:
 
     def get_least_busy_day(self):
         pass
-
-
-ab = TrackOrders()
-ab.add_new_order("maria", "hamburguer", "terça-feira")
-ab.add_new_order("joao", "pizza", "terça-feira")
-ab.add_new_order("jose", "coxinha", "sabado")
-ab.add_new_order("maria", "hamburguer", "terça-feira")
-
-ab.get_never_ordered_per_customer('maria')
-
-print(ab)
