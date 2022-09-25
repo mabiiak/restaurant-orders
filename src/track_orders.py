@@ -14,26 +14,41 @@ class TrackOrders:
 
     def get_most_ordered_dish_per_customer(self, customer):
         data = self.data
-        count_itens = {}
+        count = {}
         bigger = 0
         result = ''
-    
-        for index in data:
-            if customer == data[index][0] and data[index][1] not in count_itens:
-                count_itens[data[index][1]] = 1
-            elif customer == data[index][0] and data[index][1] in count_itens:
-                count_itens[data[index][1]] += 1
 
-        for item in count_itens:
-            if count_itens[item] > bigger:
-                bigger = count_itens[item]
+        for index in data:
+            if customer == data[index][0] and data[index][1] not in count:
+                count[data[index][1]] = 1
+            elif customer == data[index][0] and data[index][1] in count:
+                count[data[index][1]] += 1
+
+        for item in count:
+            if count[item] > bigger:
+                bigger = count[item]
                 result = item
 
         return result
 
-
     def get_never_ordered_per_customer(self, customer):
-        pass
+        data = self.data
+        all_plates = []
+        eaten = []
+        result = set()
+
+        for index in data:
+            if data[index][1] not in all_plates:
+                all_plates.append(data[index][1])
+
+            if customer == data[index][0] and data[index][1] not in eaten:
+                eaten.append(data[index][1])
+
+        for plate in all_plates:
+            if plate not in eaten:
+                result.add(plate)
+
+        return result
 
     def get_days_never_visited_per_customer(self, customer):
         pass
@@ -43,3 +58,14 @@ class TrackOrders:
 
     def get_least_busy_day(self):
         pass
+
+
+ab = TrackOrders()
+ab.add_new_order("maria", "hamburguer", "terça-feira")
+ab.add_new_order("joao", "pizza", "terça-feira")
+ab.add_new_order("jose", "coxinha", "sabado")
+ab.add_new_order("maria", "hamburguer", "terça-feira")
+
+ab.get_never_ordered_per_customer('maria')
+
+print(ab)
