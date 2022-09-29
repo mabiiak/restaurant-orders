@@ -1,11 +1,14 @@
 # Boas-vindas ao do projeto Restaurant Orders!
+
+Projeto feito durante o curso de desenvolvimento web na trybe.
+
 A lanchonete ficticia Pão na Chapa possui um sistema de faturamento de pedidos de clientes que salva o nome da pessoa, o pedido realizado e o dia da semana do atendimento.</br>
 
 A gerência da lanchonete quer aumentar suas vendas e melhorar sua gestão interna e, para isso, te contratou para implementar um projeto de melhorias. </br>
 
 Em um primeiro momento, você deverá atuar para que o sistema gere relatórios com informações sobre os pedidos e as pessoas clientes que frequentam a lanchonete.</br>
 
-Em um segundo momento (requisitos bônus), o foco do projeto deverá ser o controle do estoque de ingredientes para garantir que o cardápio digital da :baguette_bread: :cook: Pão na Chapa :baguette_bread: :cook: sempre ofereça produtos que estão disponíveis no estoque, evitando frustrações por parte das pessoas clientes. </br>
+Em um segundo momento, o foco do projeto deverá ser o controle do estoque de ingredientes para garantir que o cardápio digital da Pão na Chapa sempre ofereça produtos que estão disponíveis no estoque, evitando frustrações por parte das pessoas clientes. </br>
 
 ## Habilidades exercitadas:
   - Trabalhar com `Hashmap` e `Dict` e; </br>
@@ -91,34 +94,34 @@ Em um segundo momento (requisitos bônus), o foco do projeto deverá ser o contr
 </details>
 
 ## Requisitos
-    ✅ 1.1 - Será validado se, ao executar o método analyze_log, os dados são preenchidos de forma correta no arquivo data/mkt_campaign.txt	heavy_check_mark
+    ✅ 1.1 - Será validado se, ao executar o método analyze_log, os dados são preenchidos de forma correta no arquivo data/mkt_campaign.txt
 
-    ✅ 1.2 - Será validado se, ao executar o método analyze_log com um arquivo inexistente, o método retorna um erro	heavy_check_mark
+    ✅ 1.2 - Será validado se, ao executar o método analyze_log com um arquivo inexistente, o método retorna um erro
 
-    ✅ 1.3 - Será validado se, ao executar o método analyze_log com uma extensão inválida, o método retorna um erro	heavy_check_mark
+    ✅ 1.3 - Será validado se, ao executar o método analyze_log com uma extensão inválida, o método retorna um erro
 
-    ✅ 2.1 - Será validado se, ao instanciar a classe TrackOrders pela primeira vez, o método retorna a quantidade de pedidos é igual a zero	heavy_check_mark
+    ✅ 2.1 - Será validado se, ao instanciar a classe TrackOrders pela primeira vez, o método retorna a quantidade de pedidos é igual a zero
 
-    ✅ 2.2 - Será validado se, ao executar o método add_new_order, o método deve adicionar um pedido	heavy_check_mark
+    ✅ 2.2 - Será validado se, ao executar o método add_new_order, o método deve adicionar um pedido
 
-    ✅ 2.3 - Será validado se, ao executar get_most_ordered_dish_per_costumer, o método retorna o prato mais pedido	heavy_check_mark
+    ✅ 2.3 - Será validado se, ao executar get_most_ordered_dish_per_costumer, o método retorna o prato mais pedido
 
-    ✅ 2.4 - Será validado se, ao executar get_never_ordered_per_costumer, o método retorna o pedido que o cliente nunca fez	heavy_check_mark
+    ✅ 2.4 - Será validado se, ao executar get_never_ordered_per_costumer, o método retorna o pedido que o cliente nunca fez
 
-    ✅ 2.5 - Será validado se, ao executar get_days_never_visited_per_costumer, o método retorna o dias que o cliente nunca visitou	heavy_check_mark
+    ✅ 2.5 - Será validado se, ao executar get_days_never_visited_per_costumer, o método retorna o dias que o cliente nunca visitou
 
-    ❌ 2.6 - Será validado se, ao executar o método get_busiest_day, o método retorna o dia mais movimentado	heavy_multiplication_x
+    ❌ 2.6 - Será validado se, ao executar o método get_busiest_day, o método retorna o dia mais movimentado	
 
-    ❌ 2.7 - Será validado se, ao executar o método get_least_busy_day, o método retorna o dia menos movimentado	heavy_multiplication_x
+    ❌ 2.7 - Será validado se, ao executar o método get_least_busy_day, o método retorna o dia menos movimentado
 
-    ❌ 3.1 - Será validado se, ao executar o método get_quantities_to_buy, o método retorna a lista atualizada de ingredientes	heavy_multiplication_x
+    ❌ 3.1 - Será validado se, ao executar o método get_quantities_to_buy, o método retorna a lista atualizada de ingredientes
     
-    ❌ 3.2 - Será validado se, ao executar o método get_quantities_to_buy o método retorna toda a quantidade de ingredientes há se comprar de hamburguer	heavy_multiplication_x
+    ❌ 3.2 - Será validado se, ao executar o método get_quantities_to_buy o método retorna toda a quantidade de ingredientes há se comprar de hamburguer	
     
-    ❌ 3.3 - Será validado se, ao executar o método get_quantities_to_buy, o método retorna a lista atualizada dos ingredientes que usam receitas diferentes	heavy_multiplication_x
+    ❌ 3.3 - Será validado se, ao executar o método get_quantities_to_buy, o método retorna a lista atualizada dos ingredientes que usam receitas diferentes	
     
-    ❌ 4.1 - Será validado se, ao adicionar uma quantidade maior de ingredientes, o método retorna false	heavy_multiplication_x
+    ❌ 4.1 - Será validado se, ao adicionar uma quantidade maior de ingredientes, o método retorna false	
     
-    ❌ 4.2 - Será validado se, ao executar o método get_available_dishes, o método retorna todos os pratos onde os pratos tem ingredientes	heavy_multiplication_x
+    ❌ 4.2 - Será validado se, ao executar o método get_available_dishes, o método retorna todos os pratos onde os pratos tem ingredientes	
     
-    ❌ 4.3 - Será validado se, ao executar o método get_available_dishes, não o método retorna os pratos o qual os ingredientes não sejam suficientes para prepará-los	heavy_multiplication_x
+    ❌ 4.3 - Será validado se, ao executar o método get_available_dishes, não o método retorna os pratos o qual os ingredientes não sejam suficientes para prepará-los
